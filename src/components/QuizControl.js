@@ -52,6 +52,16 @@ class QuizControl extends React.Component {
     });
   }
 
+  // doSignOut = () => {
+  //   const history = useHistory();
+  //   firebase.auth().signOut().then(function() {
+  //     console.log("Successfully signed out!");
+  //     history.push('/');
+  //   }).catch(function(error) {
+  //     console.log(error.message);
+  //   });
+  // }
+
   render(){
     const auth = this.props.firebase.auth();
     if (!isLoaded(auth)) {
@@ -75,10 +85,10 @@ class QuizControl extends React.Component {
         currentlyVisibleState = <QuizDetail quiz = {this.state.selectedQuiz}
                                     onClickingDelete = {this.handleDeletingQuiz}/>
                                       buttonText = "Return to Quiz List";
-      }
-      else if (this.props.formVisibleOnPage) {
-        currentlyVisibleState = <NewQuizForm onNewQuizCreation = {this.handleAddingNewQuizToList} />
-                    buttonText = "Return to Quiz List";
+      // }
+      // else if (this.props.formVisibleOnPage) {
+      //   currentlyVisibleState = <NewQuizForm onNewQuizCreation = {this.handleAddingNewQuizToList} />
+      //               buttonText = "Return to Quiz List";
       } else {
         currentlyVisibleState = <QuizList onQuizSelection = {this.handleChangingSelectedQuiz} />;
                   buttonText = "Add Quiz";
