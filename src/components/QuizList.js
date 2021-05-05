@@ -32,7 +32,7 @@ function QuizList(props){
     );
   } else if (isEmpty(quizzes) && (user)) {
     return (
-      <h1>No quizs yet!</h1>
+      <h1>No quizzes yet!</h1>
     )
   } else {
     return (
